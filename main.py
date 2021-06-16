@@ -1257,7 +1257,7 @@ class Card:
         print(" You have acquired: " + self.name)
         print(" This is a " + self.rarity, "card!")
         pygame.display.update()
-        time.sleep(0.5)
+        # time.sleep(0.5) < -- culprit for slowing down card aquisition in shop
 
     def dupe(self):
         global gold
