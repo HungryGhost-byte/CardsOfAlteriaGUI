@@ -1225,7 +1225,7 @@ shopcard_look = pygame.image.load('images/whenlooking.png')
 # Mythic = 10
 
 
-gold = 0
+gold = 1000
 # to show current gold value
 # print(" - " + name + "'s Total Gold: " + str(gold), "-")
 
@@ -1257,7 +1257,7 @@ class Card:
         print(" You have acquired: " + self.name)
         print(" This is a " + self.rarity, "card!")
         pygame.display.update()
-        # time.sleep(0.5) < -- culprit for slowing down card aquisition in shop
+        pygame.time.delay(1000)
 
     def dupe(self):
         global gold
@@ -1270,6 +1270,7 @@ class Card:
             screen.blit(dupemoney4, (0, 280))
             pygame.display.update()
             gold += 10
+            # OKay THIS TIME it shouldnt lag out the program
             pygame.time.delay(1000)
 
         elif self.rarity == "Rare":
